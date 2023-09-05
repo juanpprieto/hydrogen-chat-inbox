@@ -1,4 +1,4 @@
-import {useNonce} from '@shopify/hydrogen';
+import {useNonce, Script} from '@shopify/hydrogen';
 import {defer, type LoaderArgs} from '@shopify/remix-oxygen';
 import {
   Links,
@@ -108,12 +108,6 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
-        <script
-          type="text/javascript"
-          async={true}
-          nonce={nonce}
-          src="https://cdn.shopify.com/shopifycloud/shopify_chat/storefront/shopifyChatV1.js?api_env=production&amp;c=black&amp;i=chat_bubble&amp;p=bottom_right&amp;s=icon&amp;shop_id=osm9ayZmM9GTVpiCRoEP1ySp64p_TmNkb_1nZEjJZIM&amp;t=chat_with_us&amp;v=1&amp;vp=lowest&amp;shop=juanprieto.myshopify.com"
-        />
       </head>
       <body>
         <Layout {...data}>
@@ -122,6 +116,11 @@ export default function App() {
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <LiveReload nonce={nonce} />
+        <Script
+          id="shopify-chat-client"
+          async={true}
+          src="https://cdn.shopify.com/shopifycloud/shopify_chat/storefront/shopifyChatV1.js?api_env=production&amp;c=black&amp;i=chat_bubble&amp;p=bottom_right&amp;s=icon&amp;shop_id=osm9ayZmM9GTVpiCRoEP1ySp64p_TmNkb_1nZEjJZIM&amp;t=chat_with_us&amp;v=1&amp;vp=lowest&amp;shop=juanprieto.myshopify.com"
+        />
       </body>
     </html>
   );
