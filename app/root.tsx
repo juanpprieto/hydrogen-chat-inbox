@@ -119,7 +119,7 @@ export default function App() {
         <Script
           id="shopify-chat-client"
           async={true}
-          src="https://cdn.shopify.com/shopifycloud/shopify_chat/storefront/shopifyChatV1.js?api_env=production&amp;c=black&amp;i=chat_bubble&amp;p=bottom_right&amp;s=icon&amp;shop_id=osm9ayZmM9GTVpiCRoEP1ySp64p_TmNkb_1nZEjJZIM&amp;t=chat_with_us&amp;v=1&amp;vp=lowest&amp;shop=juanprieto.myshopify.com"
+          src="https://cdn.shopify.com/shopifycloud/shopify_chat/storefront/shopifyChatV1.js?api_env=development&amp;c=black&amp;i=chat_bubble&amp;p=bottom_right&amp;s=icon&amp;shop_id=osm9ayZmM9GTVpiCRoEP1ySp64p_TmNkb_1nZEjJZIM&amp;t=chat_with_us&amp;v=1&amp;vp=lowest&amp;shop=juanprieto.myshopify.com&shop_id=osm9ayZmM9GTVpiCRoEP1ySp64p_TmNkb_1nZEjJZIM"
         />
       </body>
     </html>
