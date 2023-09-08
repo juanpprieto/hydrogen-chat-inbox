@@ -116,7 +116,7 @@ export default function App() {
         </Layout>
         <ShopifyInbox
           button={{
-            color: 'black',
+            color: 'red',
             style: 'icon',
             horizontalPosition: 'button_right',
             verticalPosition: 'lowest',
