@@ -20,6 +20,7 @@ import favicon from '../public/favicon.svg';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import {Layout} from '~/components/Layout';
+import {useEnv, getPublicEnv} from '~/utils';
 
 // This is important to avoid re-fetching root queries on sub-navigations
 export const shouldRevalidate: ShouldRevalidateFunction = ({
@@ -60,6 +61,7 @@ export async function loader({context}: LoaderArgs) {
   const {storefront, session, cart} = context;
   const customerAccessToken = await session.get('customerAccessToken');
   const publicStoreDomain = context.env.PUBLIC_STORE_DOMAIN;
+  const publicEnv = getPublicEnv(context.env);
 
   // validate the customer access token is valid
   const {isLoggedIn, headers} = await validateCustomerAccessToken(
@@ -93,6 +95,7 @@ export async function loader({context}: LoaderArgs) {
       header: await headerPromise,
       isLoggedIn,
       publicStoreDomain,
+      publicEnv,
     },
     {headers},
   );
@@ -101,6 +104,7 @@ export async function loader({context}: LoaderArgs) {
 export default function App() {
   const nonce = useNonce();
   const data = useLoaderData<typeof loader>();
+  const env = useEnv();
 
   return (
     <html lang="en">
@@ -124,8 +128,8 @@ export default function App() {
             icon: 'chat_bubble',
           }}
           shop={{
-            domain: 'juanprieto.myshopify.com',
-            token: 'osm9ayZmM9GTVpiCRoEP1ySp64p_TmNkb_1nZEjJZIM',
+            domain: env.PUBLIC_STORE_DOMAIN,
+            token: env.PUBLIC_SHOPIFY_INBOX_TOKEN,
           }}
         />
         <ScrollRestoration nonce={nonce} />
