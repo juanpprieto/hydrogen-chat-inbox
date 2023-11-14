@@ -11,7 +11,7 @@ export default async function handleRequest(
   remixContext: EntryContext,
 ) {
   const {nonce, header, NonceProvider} = createContentSecurityPolicy({
-    // 'script-src': ['self', 'cdn.shopify.com'],
+    connectSrc: ["'self'", 'cdn.shopify.com', 'shopify-chat.shopifyapps.com'],
   });
 
   const body = await renderToReadableStream(
