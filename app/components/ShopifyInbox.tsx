@@ -35,7 +35,7 @@ export type ShopifyInboxProps = {
   };
   shop: {
     domain: string;
-    token: string;
+    id: string;
   };
   version?: 'V1';
 };
@@ -46,10 +46,10 @@ export function ShopifyInbox({
   env = 'production',
   version = 'V1',
 }: ShopifyInboxProps) {
-  if (!shop?.domain || !shop?.token) {
+  if (!shop?.domain || !shop?.id) {
     // eslint-disable-next-line no-console
     console.error(
-      'ShopifyInbox: shop domain and token are required. You can get these values from the app settings.',
+      'ShopifyInbox: shop domain and id are required. You can get these values from the app settings.',
     );
     return null;
   }
@@ -100,7 +100,7 @@ export function ShopifyInbox({
       id="shopify-inbox"
       suppressHydrationWarning
       async={true}
-      src={`${baseUrl}?v=${version}&api_env=${env}&shop_id=${shop.token}&shop=${shop.domain}&${buttonSearch}`}
+      src={`${baseUrl}?v=${version}&api_env=${env}&shop_id=${shop.id}&shop=${shop.domain}&${buttonSearch}`}
     />
   );
 }
