@@ -23,7 +23,7 @@ declare global {
     PRIVATE_STOREFRONT_API_TOKEN: string;
     PUBLIC_STORE_DOMAIN: string;
     PUBLIC_STOREFRONT_ID: string;
-    PUBLIC_SHOPIFY_INBOX_TOKEN: string;
+    PUBLIC_SHOPIFY_INBOX_SHOP_ID: string;
   }
 }
 
