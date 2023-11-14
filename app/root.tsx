@@ -129,7 +129,7 @@ export default function App() {
           }}
           shop={{
             domain: env.PUBLIC_STORE_DOMAIN,
-            token: env.PUBLIC_SHOPIFY_INBOX_TOKEN,
+            id: env.PUBLIC_SHOPIFY_INBOX_SHOP_ID,
           }}
         />
         <ScrollRestoration nonce={nonce} />
