@@ -54,8 +54,6 @@ export function ShopifyInbox({
     return null;
   }
 
-  const baseUrl = `https://cdn.shopify.com/shopifycloud/shopify_chat/storefront/shopifyChat${version}.js`;
-
   const defaultButton = {
     color: 'black',
     style: 'icon',
@@ -94,6 +92,7 @@ export function ShopifyInbox({
     return acc;
   }, {} as Record<string, string>);
 
+  const baseUrl = `https://cdn.shopify.com/shopifycloud/shopify_chat/storefront/shopifyChat${version}.js`;
   const buttonSearch = new URLSearchParams(buttonParams).toString();
 
   return (
